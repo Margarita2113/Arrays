@@ -1,5 +1,6 @@
 package ru.netology.stats;
 
+
 public class StatsService {
     public int minSales(int[] sales) {
         int minMonth = 0;
@@ -19,5 +20,21 @@ public class StatsService {
             }
         }
         return maxMonth + 1;
+    }
+
+    public int sumAllSales(int[] sales) {
+        int sumAllSales = 0;
+        for (int i = 0; i < sales.length; i++) {
+            sumAllSales += sales[i];
+        }
+        return sumAllSales;
+    }
+
+    public int averageSales(int[] sales) {
+        int sumAllSales = 0;
+        for (int i = 0; i < sales.length; i++) {
+            sumAllSales += sales[i];
+        }
+        return sumAllSales / sales.length;
     }
 }

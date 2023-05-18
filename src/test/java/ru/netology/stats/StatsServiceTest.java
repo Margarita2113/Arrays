@@ -29,4 +29,30 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedMaxMonth, actualMaxMonth);
 
     }
+
+    @Test
+    public void shouldCalculateSumAllSales() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedSumAllSales = 180;
+        int actualSmAllSales = service.sumAllSales(sales);
+
+
+        Assertions.assertEquals(expectedSumAllSales, actualSmAllSales);
+
+    }
+
+    @Test
+    public void shouldCalculateAverageSales() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedAverageSales = 15;
+        int actualAverageSales = service.averageSales(sales);
+
+
+        Assertions.assertEquals(expectedAverageSales, actualAverageSales);
+
+    }
 }
