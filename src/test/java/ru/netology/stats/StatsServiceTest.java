@@ -16,4 +16,17 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedMinMonth, actualMinMonth);
 
     }
+
+    @Test
+    public void shouldFindMaxMonth() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedMaxMonth = 6;
+        int actualMaxMonth = service.maxSales(sales);
+
+
+        Assertions.assertEquals(expectedMaxMonth, actualMaxMonth);
+
+    }
 }
