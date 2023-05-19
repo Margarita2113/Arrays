@@ -31,10 +31,28 @@ public class StatsService {
     }
 
     public int averageSales(int[] sales) {
-        int sumAllSales = 0;
+        int averageSales = sumAllSales(sales) / sales.length;
+
+        return averageSales;
+    }
+
+    public int belowAverageSales(int[] sales) {
+        int belowAverageSales = 0;
         for (int i = 0; i < sales.length; i++) {
-            sumAllSales += sales[i];
+            if (sales[i] < averageSales(sales)) {
+                belowAverageSales++;
+            }
         }
-        return sumAllSales / sales.length;
+        return belowAverageSales;
+    }
+
+    public int aboveAverageSales(int[] sales) {
+        int aboveAverageSales = 0;
+        for (int i = 0; i < sales.length; i++) {
+            if (sales[i] > averageSales(sales)) {
+                aboveAverageSales++;
+            }
+        }
+        return aboveAverageSales;
     }
 }

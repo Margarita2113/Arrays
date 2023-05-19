@@ -55,4 +55,29 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedAverageSales, actualAverageSales);
 
     }
+
+    @Test
+    public void shouldCalculateBelowAverageSales() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedBelowAverageSales = 5;
+        int actualBelowAverageSales = service.belowAverageSales(sales);
+
+
+        Assertions.assertEquals(expectedBelowAverageSales, actualBelowAverageSales);
+
+    }
+
+    @Test
+    public void shouldCalculateAboveAverageSales() {
+        StatsService service = new StatsService();
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+
+        int expectedAboveAverageSales = 5;
+        int actualAboveAverageSales = service.belowAverageSales(sales);
+
+        Assertions.assertEquals(expectedAboveAverageSales, actualAboveAverageSales);
+
+    }
 }
